@@ -1,0 +1,262 @@
+{
+  "schema_version": "1.0.0",
+  "elements": [
+    {
+      "description": "",
+      "summary": "",
+      "path": "actindo-toggle-button.html",
+      "properties": [
+        {
+          "name": "checked",
+          "type": "boolean",
+          "description": "determines if toggle-button is checked",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 65,
+              "column": 20
+            },
+            "end": {
+              "line": 69,
+              "column": 21
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "observer": "\"_onCheckedChanged\""
+            }
+          },
+          "defaultValue": "false"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "description": "Determines if toggle-button is disabled",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 73,
+              "column": 20
+            },
+            "end": {
+              "line": 76,
+              "column": 21
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "defaultValue": "false"
+        },
+        {
+          "name": "value",
+          "type": "boolean",
+          "description": "Value for form submit/load",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 81,
+              "column": 20
+            },
+            "end": {
+              "line": 84,
+              "column": 21
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "observer": "\"_onValueChanged\""
+            }
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Name for form behaviour",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 88,
+              "column": 20
+            },
+            "end": {
+              "line": 90,
+              "column": 21
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "description": "Label shown behind the checkbox",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 94,
+              "column": 20
+            },
+            "end": {
+              "line": 96,
+              "column": 21
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "_onCheckedChanged",
+          "description": "called when checked is changed; syncs to value property",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 105,
+              "column": 12
+            },
+            "end": {
+              "line": 121,
+              "column": 13
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "newValue"
+            }
+          ]
+        },
+        {
+          "name": "_onValueChanged",
+          "description": "called when value is changed; syncs it to checked",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 128,
+              "column": 12
+            },
+            "end": {
+              "line": 144,
+              "column": 13
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "newValue"
+            }
+          ]
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 52,
+          "column": 8
+        },
+        "end": {
+          "line": 145,
+          "column": 9
+        }
+      },
+      "privacy": "public",
+      "superclass": "Polymer.Element",
+      "name": "ActindoToggleButton",
+      "attributes": [
+        {
+          "name": "checked",
+          "description": "determines if toggle-button is checked",
+          "sourceRange": {
+            "start": {
+              "line": 65,
+              "column": 20
+            },
+            "end": {
+              "line": 69,
+              "column": 21
+            }
+          },
+          "metadata": {},
+          "type": "boolean"
+        },
+        {
+          "name": "disabled",
+          "description": "Determines if toggle-button is disabled",
+          "sourceRange": {
+            "start": {
+              "line": 73,
+              "column": 20
+            },
+            "end": {
+              "line": 76,
+              "column": 21
+            }
+          },
+          "metadata": {},
+          "type": "boolean"
+        },
+        {
+          "name": "value",
+          "description": "Value for form submit/load",
+          "sourceRange": {
+            "start": {
+              "line": 81,
+              "column": 20
+            },
+            "end": {
+              "line": 84,
+              "column": 21
+            }
+          },
+          "metadata": {},
+          "type": "boolean"
+        },
+        {
+          "name": "name",
+          "description": "Name for form behaviour",
+          "sourceRange": {
+            "start": {
+              "line": 88,
+              "column": 20
+            },
+            "end": {
+              "line": 90,
+              "column": 21
+            }
+          },
+          "metadata": {},
+          "type": "string"
+        },
+        {
+          "name": "label",
+          "description": "Label shown behind the checkbox",
+          "sourceRange": {
+            "start": {
+              "line": 94,
+              "column": 20
+            },
+            "end": {
+              "line": 96,
+              "column": 21
+            }
+          },
+          "metadata": {},
+          "type": "string"
+        }
+      ],
+      "events": [],
+      "styling": {
+        "cssVariables": [],
+        "selectors": []
+      },
+      "slots": [],
+      "tagname": "actindo-toggle-button"
+    }
+  ]
+}

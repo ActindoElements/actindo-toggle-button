@@ -1,0 +1,150 @@
+<link rel="import" href="../paper-toggle-button/paper-toggle-button.html">
+<dom-module id="actindo-toggle-button">
+    <template>
+        <style>
+            div.main
+            {
+                display:flex;
+                align-items: center;
+            }
+            span.toggle-wrapper
+            {
+                position: relative;
+            }
+            div.disabled-overlay
+            {
+                position: absolute;
+                top: 0;
+                bottom: -3px;
+                right: 0;
+                left: 0;
+                cursor: auto;
+                z-index: 1;
+                background-color: white;
+                opacity: 0.5;
+            }
+            span.label
+            {
+                color: var(--actindo-secondary);
+                @apply(--font-body);
+                @apply(--actindo-toggle-button-label);
+            }
+            paper-toggle-button
+            {
+                --paper-toggle-button-checked-button-color: var(--actindo-primary);
+                cursor: pointer;
+            }
+        </style>
+        <div class="main">
+
+            <span class="toggle-wrapper">
+                <paper-toggle-button
+                        checked="{{checked}}"
+                ></paper-toggle-button>
+                <template is="dom-if" if="[[disabled]]">
+                    <div class="disabled-overlay"></div>
+                </template>
+            </span>
+            <span class="label">
+                [[label]]
+            </span>
+        </div>
+    </template>
+    <script>
+        class ActindoToggleButton extends Polymer.Element
+        {
+            static get is()
+            {
+                return "actindo-toggle-button";
+            }
+
+            static get properties()
+            {
+                return {
+                    /**
+                     * determines if toggle-button is checked
+                     */
+                    checked: {
+                        type: Boolean,
+                        value: false,
+                        observer: "_onCheckedChanged"
+                    },
+                    /**
+                     * Determines if toggle-button is disabled
+                     */
+                    disabled: {
+                        type: Boolean,
+                        value: false
+                    },
+                   
+                    /**
+                     * Value for form submit/load
+                     */
+                    value: {
+                        type: Boolean,
+                        observer: "_onValueChanged"
+                    },
+                    /**
+                     * Name for form behaviour
+                     */
+                    name: {
+                        type: String
+                    },
+                    /**
+                     * Label shown behind the checkbox
+                     */
+                    label: {
+                        type: String
+                    }
+                }
+            }
+
+            /**
+              * called when checked is changed; syncs to value property
+              * @param {Boolean}
+              * @private
+              */
+            _onCheckedChanged( newValue )
+            {
+                if( newValue )
+                {
+                    if( this.value !== true )
+                    {
+                        this.value = true;
+                    }
+                }
+                else
+                {
+                    if( this.value !== false )
+                    {
+                        this.value = false;
+                    }
+                }
+            }
+
+            /**
+              * called when value is changed; syncs it to checked
+              * @param {Boolean}
+              * @private
+              */
+            _onValueChanged( newValue )
+            {
+                if( newValue )
+                {
+                    if( this.checked !== true )
+                    {
+                        this.checked = true;
+                    }
+                }
+                if( !newValue )
+                {
+                    if( this.checked !== false )
+                    {
+                        this.checked = false;
+                    }
+                }
+            }
+        }
+        customElements.define( ActindoToggleButton.is, ActindoToggleButton );
+    </script>
+</dom-module>

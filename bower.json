@@ -1,0 +1,19 @@
+{
+    "name": "actindo-toggle-button",
+    "version": "0.1.0",
+    "description": "Wrapper of paper-toggle-button providing useful colorscheme for disabled state as well as sending value true/false in forms",
+    "license": "Apache-2.0",
+    "main": "actindo-toggle-button.html",
+    "keywords": [
+        "polymer",
+        "web-components"
+    ],
+    "ignore": [
+        "**/.*",
+        "bower_components"
+    ],
+    "dependencies": {
+        "polymer": "Polymer/polymer#^2.0.0",
+        "paper-toggle-button": "^2.0.0"
+    }
+}
