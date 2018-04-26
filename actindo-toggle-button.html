@@ -25,7 +25,6 @@
             }
             span.label
             {
-                color: var(--actindo-secondary);
                 @apply(--font-body);
                 @apply(--actindo-toggle-button-label);
             }
@@ -33,6 +32,18 @@
             {
                 --paper-toggle-button-checked-button-color: var(--actindo-primary);
                 cursor: pointer;
+            }
+            .color-true-true
+            {
+                color: var(--actindo-primary);
+            }
+            span.label-checked-true
+            {
+                @apply(--label-toggled-style);
+            }
+            span.label-checked-false
+            {
+                @apply(--label-untoggled-style);
             }
         </style>
         <div class="main">
@@ -45,7 +56,14 @@
                     <div class="disabled-overlay"></div>
                 </template>
             </span>
-            <span class="label">
+            <template is="dom-if" if="[[_showUncheckedIcon(icon, checked)]]">
+                <iron-icon icon="[[icon]]"></iron-icon>
+            </template>
+            <template is="dom-if" if="[[_showCheckedIcon(toggledIcon, checked)]]">
+                <iron-icon class$="color-[[usePrimaryColor]]-[[checked]]" icon="[[toggledIcon]]"></iron-icon>
+            </template>
+
+            <span class$="label color-[[usePrimaryColor]]-[[checked]] label-checked-[[checked]]">
                 [[label]]
             </span>
         </div>
@@ -95,13 +113,32 @@
                      */
                     label: {
                         type: String
+                    },
+
+                    /**
+                     * Icon to show in untoggled state
+                     */
+                    icon: {
+                        type: String
+                    },
+
+                    /**
+                     * Icon to show in untoggled state
+                     */
+                    toggledIcon: {
+                        type: String
+                    },
+
+                    usePrimaryColor: {
+                        type: Boolean,
+                        value: false
                     }
                 }
             }
 
             /**
               * called when checked is changed; syncs to value property
-              * @param {Boolean}
+              * @param {Boolean} newValue
               * @private
               */
             _onCheckedChanged( newValue )
@@ -122,9 +159,34 @@
                 }
             }
 
+
+            /**
+             * determines wether icon is shown or not
+             * @param {String} icon
+             * @param {Boolean} checked
+             * @return {Boolean}
+             * @private
+             */
+            _showUncheckedIcon(icon, checked)
+            {
+                return !checked && icon;
+            }
+
+            /**
+             * determines wether icon is shown or not
+             * @param {String} icon
+             * @param {Boolean} checked
+             * @return {Boolean}
+             * @private
+             */
+            _showCheckedIcon(icon, checked)
+            {
+                return checked && icon;
+            }
+
             /**
               * called when value is changed; syncs it to checked
-              * @param {Boolean}
+              * @param {Boolean} newValue
               * @private
               */
             _onValueChanged( newValue )
