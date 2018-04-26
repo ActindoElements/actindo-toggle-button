@@ -13,11 +13,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 65,
+              "line": 84,
               "column": 20
             },
             "end": {
-              "line": 69,
+              "line": 88,
               "column": 21
             }
           },
@@ -35,11 +35,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 73,
+              "line": 92,
               "column": 20
             },
             "end": {
-              "line": 76,
+              "line": 95,
               "column": 21
             }
           },
@@ -55,11 +55,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 81,
+              "line": 100,
               "column": 20
             },
             "end": {
-              "line": 84,
+              "line": 103,
               "column": 21
             }
           },
@@ -76,11 +76,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 88,
+              "line": 107,
               "column": 20
             },
             "end": {
-              "line": 90,
+              "line": 109,
               "column": 21
             }
           },
@@ -95,17 +95,75 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 94,
+              "line": 113,
               "column": 20
             },
             "end": {
-              "line": 96,
+              "line": 115,
               "column": 21
             }
           },
           "metadata": {
             "polymer": {}
           }
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "description": "Icon to show in untoggled state",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 120,
+              "column": 20
+            },
+            "end": {
+              "line": 122,
+              "column": 21
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "toggledIcon",
+          "type": "string",
+          "description": "Icon to show in untoggled state",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 127,
+              "column": 20
+            },
+            "end": {
+              "line": 129,
+              "column": 21
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "usePrimaryColor",
+          "type": "boolean",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 131,
+              "column": 20
+            },
+            "end": {
+              "line": 134,
+              "column": 21
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "defaultValue": "false"
         }
       ],
       "methods": [
@@ -115,20 +173,79 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 105,
+              "line": 143,
               "column": 12
             },
             "end": {
-              "line": 121,
+              "line": 159,
               "column": 13
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "newValue"
+              "name": "newValue",
+              "type": "Boolean"
             }
           ]
+        },
+        {
+          "name": "_showUncheckedIcon",
+          "description": "determines wether icon is shown or not",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 169,
+              "column": 12
+            },
+            "end": {
+              "line": 172,
+              "column": 13
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "icon",
+              "type": "String"
+            },
+            {
+              "name": "checked",
+              "type": "Boolean"
+            }
+          ],
+          "return": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "_showCheckedIcon",
+          "description": "determines wether icon is shown or not",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 181,
+              "column": 12
+            },
+            "end": {
+              "line": 184,
+              "column": 13
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "icon",
+              "type": "String"
+            },
+            {
+              "name": "checked",
+              "type": "Boolean"
+            }
+          ],
+          "return": {
+            "type": "Boolean"
+          }
         },
         {
           "name": "_onValueChanged",
@@ -136,18 +253,19 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 128,
+              "line": 191,
               "column": 12
             },
             "end": {
-              "line": 144,
+              "line": 207,
               "column": 13
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "newValue"
+              "name": "newValue",
+              "type": "Boolean"
             }
           ]
         }
@@ -157,11 +275,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 52,
+          "line": 71,
           "column": 8
         },
         "end": {
-          "line": 145,
+          "line": 208,
           "column": 9
         }
       },
@@ -174,11 +292,11 @@
           "description": "determines if toggle-button is checked",
           "sourceRange": {
             "start": {
-              "line": 65,
+              "line": 84,
               "column": 20
             },
             "end": {
-              "line": 69,
+              "line": 88,
               "column": 21
             }
           },
@@ -190,11 +308,11 @@
           "description": "Determines if toggle-button is disabled",
           "sourceRange": {
             "start": {
-              "line": 73,
+              "line": 92,
               "column": 20
             },
             "end": {
-              "line": 76,
+              "line": 95,
               "column": 21
             }
           },
@@ -206,11 +324,11 @@
           "description": "Value for form submit/load",
           "sourceRange": {
             "start": {
-              "line": 81,
+              "line": 100,
               "column": 20
             },
             "end": {
-              "line": 84,
+              "line": 103,
               "column": 21
             }
           },
@@ -222,11 +340,11 @@
           "description": "Name for form behaviour",
           "sourceRange": {
             "start": {
-              "line": 88,
+              "line": 107,
               "column": 20
             },
             "end": {
-              "line": 90,
+              "line": 109,
               "column": 21
             }
           },
@@ -238,16 +356,64 @@
           "description": "Label shown behind the checkbox",
           "sourceRange": {
             "start": {
-              "line": 94,
+              "line": 113,
               "column": 20
             },
             "end": {
-              "line": 96,
+              "line": 115,
               "column": 21
             }
           },
           "metadata": {},
           "type": "string"
+        },
+        {
+          "name": "icon",
+          "description": "Icon to show in untoggled state",
+          "sourceRange": {
+            "start": {
+              "line": 120,
+              "column": 20
+            },
+            "end": {
+              "line": 122,
+              "column": 21
+            }
+          },
+          "metadata": {},
+          "type": "string"
+        },
+        {
+          "name": "toggled-icon",
+          "description": "Icon to show in untoggled state",
+          "sourceRange": {
+            "start": {
+              "line": 127,
+              "column": 20
+            },
+            "end": {
+              "line": 129,
+              "column": 21
+            }
+          },
+          "metadata": {},
+          "type": "string"
+        },
+        {
+          "name": "use-primary-color",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 131,
+              "column": 20
+            },
+            "end": {
+              "line": 134,
+              "column": 21
+            }
+          },
+          "metadata": {},
+          "type": "boolean"
         }
       ],
       "events": [],
